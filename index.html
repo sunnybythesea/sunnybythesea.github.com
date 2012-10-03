@@ -6,10 +6,11 @@
 <head>
   <meta charset="utf-8">
   <title>My thoughts exactly</title>
-  <meta name="author" content="Sanket K">
+  <meta name="author" content="Sanket">
 
   
-  <meta name="description" content="Writing is like a dance for the mind. It allows us to flex our creative muscles. And, to write using the right tools makes all the difference. I am &hellip;">
+  <meta name="description" content="Processing is a beautiful framework. I want to talk about the philosophy of why Processing matters
+and eventually it&#8217;s spin-off (Processing.js &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -37,7 +38,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">My thoughts exactly</a></h1>
   
-    <h2>The journal of a wannabe geek</h2>
+    <h2>A journal of metamorphosis</h2>
   
 </hgroup>
 
@@ -70,6 +71,117 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/09/17/processing/">The Beauty of Processing(.js)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-17T21:41:00-07:00" pubdate data-updated="true">Sep 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.processing.org">Processing</a> is a beautiful framework.</p>
+
+<p>I want to talk about the philosophy of why Processing matters
+and eventually it&#8217;s spin-off (Processing.js).</p>
+
+<p>Back in the 80&#8217;s when BASIC was all the rage.</p>
+
+<p>It was easy for kids and adults alike to start playing and experimenting&#8230;</p>
+
+<p>Books are great, but prototypes are better</p>
+
+<p>Here is an example of processing.js in action.</p>
+
+<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.js" 
+type="text/javascript"></script>
+
+
+<p><canvas data-processing-sources="/downloads/code/clock.pde" width="200" height="200">
+</canvas></p></p>
+
+<div style="height:0px;width:0px;overflow:hidden;"></div>
+
+
+
+
+<figure class='code'><figcaption><span> (clock.pde)</span> <a href='/downloads/code/clock.pde'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">size</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="mi">200</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">stroke</span><span class="o">(</span><span class="mi">255</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">smooth</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">background</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">fill</span><span class="o">(</span><span class="mi">80</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">noStroke</span><span class="o">();</span>
+</span><span class='line'>  <span class="c1">// Angles for sin() and cos() start at 3 o&#39;clock;</span>
+</span><span class='line'>  <span class="c1">// subtract HALF_PI to make them start at the top</span>
+</span><span class='line'>  <span class="n">ellipse</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">160</span><span class="o">,</span> <span class="mi">160</span><span class="o">);</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">s</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">second</span><span class="o">(),</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">60</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">TWO_PI</span><span class="o">)</span> <span class="o">-</span> <span class="n">HALF_PI</span><span class="o">;</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">m</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">minute</span><span class="o">(),</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">60</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">TWO_PI</span><span class="o">)</span> <span class="o">-</span> <span class="n">HALF_PI</span><span class="o">;</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">h</span> <span class="o">=</span> <span class="n">map</span><span class="o">(</span><span class="n">hour</span><span class="o">()</span> <span class="o">%</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">TWO_PI</span><span class="o">)</span> <span class="o">-</span> <span class="n">HALF_PI</span><span class="o">;</span>
+</span><span class='line'>  <span class="n">stroke</span><span class="o">(</span><span class="mi">255</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">strokeWeight</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">line</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="n">cos</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">*</span> <span class="mi">72</span> <span class="o">+</span> <span class="mi">100</span><span class="o">,</span> <span class="n">sin</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">*</span> <span class="mi">72</span> <span class="o">+</span> <span class="mi">100</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">strokeWeight</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">line</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="n">cos</span><span class="o">(</span><span class="n">m</span><span class="o">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="mi">100</span><span class="o">,</span> <span class="n">sin</span><span class="o">(</span><span class="n">m</span><span class="o">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="mi">100</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">strokeWeight</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">line</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="n">cos</span><span class="o">(</span><span class="n">h</span><span class="o">)</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">,</span> <span class="n">sin</span><span class="o">(</span><span class="n">h</span><span class="o">)</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">100</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/08/14/why-writing-matters/">Why Writing Matters</a></h1>
     
     
@@ -93,7 +205,25 @@
   </header>
 
 
-  <div class="entry-content"><p>Writing is like a dance for the mind. It allows us to flex our creative muscles. And, to write using the right tools makes all the difference. I am starting this blog with octopress as a way to flex my technical as well as creative muscles. Wish me luck!</p>
+  <div class="entry-content"><p>For the past few years, I have been working as a pretty average software engineer in
+corporate America. While it does have its fair share of rewards (technical as well as
+financial), it eventually become routine. Most people in apparently cushy white-collar jobs get to those
+crossroads at some point in their careers (sometimes several times).
+The days start to blur together and even small victories become rare and prized.
+Certain people get accustomed to this routine and might even crave it. Others, like myself,
+start looking for ways to break the routine. Some folks changes jobs or careers. Others
+burn out and bum around for a while. Engineers tend to start talking about startups and
+will usually start fantasizing about starting a company resembling the next <a href="http://instagram.com"> Instagram</a>. There are of course those who do make it happen. And kudos to them.
+I deeply admire those who brave the entrepreneurial path even when they don&#8217;t necessarily &#8220;make it big&#8221;. The triumph I believe is in taking the road, and not in how far one gets. Life after all is really about the journey. The <a href="http://en.wikipedia.org/wiki/Death"> Final Destination </a> is the same for all of us. But this article isn&#8217;t about the end, its about what comes before that. To choose one&#8217;s path in life, one needs to know oneself. Of course, that&#8217;s much harder
+than it might seem. Self-contemplation over time is necessary. This process can take many years and your understanding of yourself can be muddy for a long time. I know mine still is, and I do dangerous amounts of self-analysis sometimes.</p>
+
+<p>That&#8217;s where &#8216;writing&#8217; comes in. Writing allows one to organize thought. And, to see it
+develop with every sentence. Writing is for the mind, as dance is for the body. It keeps the mind working. While the mind can ramble on with too many thoughts at once, writing forces it to focus and really
+elucidate the thought that it is grappling with. I know there are a trillion blogs out there already, but this is an exercise for my brain. Reading a blog and writing one are completely different activities.</p>
+
+<p>And, to write using the right tools makes all the difference. I have picked Octopress since it seems like a neat tool that is based on <a href="http://jekyllrb.com"> Jekyll </a>. Its a blogging framework for geeks, and I&#8217;m at least pretending to be one.</p>
+
+<p>Go ahead, try writing a little. And find your own path.</p>
 </div>
   
   
@@ -114,10 +244,43 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/17/processing/">The Beauty of Processing(.js)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/14/why-writing-matters/">Why writing matters</a>
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/sunnybythesea">@sunnybythesea</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'sunnybythesea',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -131,7 +294,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Sanket K -
+  Copyright &copy; 2012 - Sanket -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
@@ -150,6 +313,14 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
